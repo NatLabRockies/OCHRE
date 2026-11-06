@@ -380,7 +380,7 @@ def calculate_film_resistances(name, boundary, location):
         h_natural = 1.31 * delta_t ** (1 / 3)  # in W/m^2-K
     else:
         cos_tilt = abs(np.cos(convert(tilt, "deg", "rad")))
-        if above_hotter:
+        if not above_hotter:
             # use "enhanced" convection coefficient
             h_natural = 9.482 * delta_t ** (1 / 3) / (7.238 - cos_tilt)
         else:
